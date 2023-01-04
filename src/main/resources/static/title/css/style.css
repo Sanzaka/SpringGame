@@ -1,0 +1,172 @@
+﻿@charset "utf-8"; /*文字コード指定*/
+
+/* ----- css reset(各ブラウザで指定されているスタイルを初期化)と全体設定 ----- */
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, textarea, p, th, td, img {
+	margin: 0; /*ボックス外側の余白(値1つは上下左右をまとめて指定)*/
+	padding: 0; /*ボックス内側の余白(値1つは上下左右をまとめて指定)*/
+	border: 0; /*境界線指定*/
+}
+
+body {
+	background-color: #ffffff; /*背景色設定*/
+	line-height: 2;	/*行の高さ指定(数値のみの場合はfont-sizeの倍数)*/
+	font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro"; /*フォントの種類指定(左から優先順位)*/
+	font-size: 75%; /* フォントサイズ指定(%はブラウザに設定した標準文字サイズ(通常16px)に対する値)*/
+	color: #000000; /*文字色指定*/
+}
+
+ol, ul {
+	list-style: none; /*リストマーカーの種類指定(noneはなし)*/
+}
+
+a { /*リンクの文字設定(マウスをのせる前)*/
+	color: #0000FF; /*文字色指定*/
+	text-decoration: none; /*テキストの装飾指定(下線、上線など)(noneはなし)*/
+}
+
+a:hover { /*リンクの文字設定(マウスをのせた時)*/
+	color: #C74B15; /*文字色指定*/
+	text-decoration: underline; /*テキストの装飾指定(下線、上線など)(underlineは下線を引く)*/
+}
+
+.color1 {
+	color: #990000; /*文字色指定*/
+}
+
+/* ----- ヘッダー(ページの一番上の部分) ----- */
+
+#header {
+	position: relative; /*ボックスの配置方法(relativeは相対位置配置)*/
+	height: 80px; /*領域の高さ指定*/
+	width: 900px; /*幅指定*/
+	margin: 10px auto; /*ボックス外側の余白(値2つは左から上下,左右の値)*/
+}
+
+/* ----- ロゴ ----- */
+
+#logo {
+	position: absolute; /*ボックスの配置方法(absoluteは絶対位置配置)*/
+	left: 0; /*左からの距離(positionで指定している場合に適用)*/
+	top: 10px; /*上からの距離(positionで指定している場合に適用)*/
+	line-height: 30px; /*行の高さ指定*/
+	font-family: 'IM Fell Great Primer SC', serif; /*Webフォントの種類指定*/
+	font-size: 2.5em; /* フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+	text-align: center; /*行の水平方向の揃え方(centerは中央揃え)*/
+}
+
+#logo a {
+	color: #555; /*文字色指定*/
+}
+
+#logo a:hover {
+	text-decoration: none; /*テキストの装飾指定(下線、上線など)(noneはなし)*/
+}
+
+/* ----- ナビゲーションメニュー(ヘッダー内のメインメニュー) ----- */
+
+#menu {
+	position: absolute; /*ボックスの配置方法(absoluteは絶対位置配置)*/
+	left: 250px; /*左からの距離(positionで指定している場合に適用)*/
+	top: 20px; /*上からの距離(positionで指定している場合に適用)*/
+	text-align: center; /*行の水平方向の揃え方(centerは中央揃え)*/
+}
+
+#menu a {
+	color: #555; /*文字色指定*/
+	font-family: 'IM Fell Great Primer SC', serif; /*Webフォントの種類指定*/
+	font-size: 1.8em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+	text-transform: capitalize; /*フォントの大文字小文字指定(capitalizeは先頭文字を大文字)*/
+	text-decoration: none; /*テキストの装飾指定(下線、上線など)(noneはなし)*/
+	margin-right: 30px; /*ボックス外側右の余白*/
+}
+
+#menu a:hover, #menu a.active {
+	color: #b22222; /*文字色指定*/
+}
+
+/* ----- 区切り線（グラデーション設定） ----- */
+
+hr.style-one {
+	border: 0; /*境界線指定*/
+	height: 1px; /*領域の高さ指定*/
+	background: #999; /*背景に関する指定をまとめて行う*/
+	background-image: -webkit-linear-gradient(left, #eee, #999, #eee); /*背景画像指定*/
+	background-image:    -moz-linear-gradient(left, #eee, #999, #eee); /*背景画像指定*/
+	background-image:     -ms-linear-gradient(left, #eee, #999, #eee); /*背景画像指定*/
+	background-image:      -o-linear-gradient(left, #eee, #999, #eee); /*背景画像指定*/
+}
+
+/* ----- h1 ----- */
+
+h1 {
+	margin-bottom: 50px; /*ボックス外側下の余白*/
+	color: #777; /*文字色指定*/
+	font-weight: normal; /*フォントの太さ指定(normalは標準)*/
+	font-size: 2.2em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+	text-align: center; /*行の水平方向の揃え方(centerは中央揃え)*/
+}
+
+/* ----- レイアウト ----- */
+
+#container { /*container(入れ物、容器)の中に各要素(ボックス)を配置*/
+	width: 900px; /*幅指定*/
+	margin: 0 auto; /*ボックス外側の余白(値2つは左から上下,左右の値(左右autoで中央配置))*/
+}
+
+#content {
+	margin: 50px 0; /*ボックス外側の余白(値2つは左から上下,左右の値)*/
+	text-align: center; /*行の水平方向の揃え方(centerは中央揃え)*/
+}
+
+/* ----- フッター(ページの一番下の部分) ----- */
+
+#footer {
+	height: 50px; /*領域の高さ指定*/
+	width: 100%; /*幅指定(100%は画面横幅いっぱいに表示)*/
+}
+
+#footer p {
+	margin-top: 10px; /*ボックス外側上の余白*/
+	text-align: center; /*行の水平方向の揃え方(centerは中央揃え)*/
+	font-size: 0.75em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+	color: #000000; /*文字色指定*/
+}
+
+/* ----- コンテンツ ----- */
+
+#content h2 {
+	font-size: 2em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+	font-weight: normal; /*フォントの太さ指定(normalは標準)*/
+	margin: 10px 0; /*ボックス外側の余白(値2つは左から上下,左右の値)*/
+}
+
+#content ul {
+	margin-bottom: 20px; /*ボックス外側下の余白*/
+}
+
+#content ul li {
+	padding: 10px 0; /*ボックス内側の余白(値2つは左から上下,左右の値)*/
+	font-size: 1.2em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+}
+
+#content a:hover img {
+	border: solid 1px #c9171e; /*境界線の一括指定(solidは1本線,線の太さ,線の色)*/
+}
+
+/* ----- テーブル設定 ----- */
+
+.ta {
+	width: 500px; /*幅指定*/
+	margin: 0 auto; /*ボックス外側の余白(値2つは左から上下,左右の値(左右autoで中央配置))*/
+	margin-bottom: 50px; /*ボックス外側下の余白*/
+	border-collapse: collapse; /*境界線の表示指定(collapseは重ねて表示)*/
+}
+
+.ta th, td {
+	border: none; /*境界線の一括指定(noneはなし)*/
+	padding: 0 0 10px 10px; /*ボックス内側の余白(値4つは左から上,右,下,左の値)*/
+	font-size: 1.2em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+	font-weight: normal; /*フォントの太さ指定(normalは標準)*/
+	text-align: center; /*行の水平方向の揃え方(centerは中央揃え)*/
+}
